@@ -31,6 +31,7 @@ class BERTEmbedding(nn.Module):
         # 此时声明的position embedding应该已经更改为learnable
         padding_idx = 0  # 在此方案的vocabulary中, <pad> = 0
         bit_mask = sequence.ne(padding_idx).int()
+        # bit_mask = bit_mask.unsqueeze(1)
         # input tokens(index)中不等于<pad>的位置为1, 反之为0，通过累加和求, 求出非<pad> tokens的位置坐标, 最后的'*mask'的作用是:
         # 保留非<pad> token的位置坐标, <pad> token的位置坐标全为0，这种情况正好符合position embedding中的padding_idx=0
         position_index = torch.cumsum(bit_mask, dim=1).type_as(bit_mask) * bit_mask
