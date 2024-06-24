@@ -1,0 +1,28 @@
+{
+    "samples_dir":          "N:/sourceforge/PE64",
+    "disasm_dir":           "F:/train/dataset/sourceforge_disasm64",
+    "ida_path":             "D:/Software/IDA_Pro_7.7/idat64.exe",
+    "ida_script":           "D:/DeepPacker/preprocess/Disasm.py",
+    "ida_threads":          4,
+    "timeout":              300,
+    "log":                  "timeout.txt",
+    "packer":               "",
+    "architecture":         "PE",
+    "skip_finished":        true,
+    "split_region":         true,
+    "LE":                   false,
+
+    "normalize":            true,
+    "data_num":             25000,
+    "label":                2,
+    "chunk_size":           100,
+    "sample_num":           5,
+    "gen_vocab":            true,
+    "drop_threshold":       0.8,
+    "dataset_dir" :         "D:/finetune_dataset/dataset",
+    "norm_dir":             "F:/train/dataset/LE_norm",
+    "vocab_dir":            "D:/vocab",
+    "vocab_path":           "vocab.txt",
+    "norm_threads":         8,
+    "vocab_threads":        8
+}
